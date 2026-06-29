@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Proof</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      /* header */
+      #word-on-the-streets {
+        margin: 0 auto;
+      }
+      .wots-heading_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+      .wots-heading_container img {
+        width: clamp(52px, 9vw, 105px);
+        height: clamp(52px, 9vw, 105px);
+      }
+      .wots-heading_container .wots-heading {
+        text-align: center;
+        font-size: clamp(20px, 4vw, 40px);
+        font-weight: 600;
+        line-height: clamp(30px, 5vw, 60px);
+      }
+      /* wots-content_section */
+      .wots-content_section {
+        display: flex;
+        overflow-x: auto;
+        gap: 8px;
+        padding: 0 16px;
+        scrollbar-width: none;
+        justify-content: flex-start;
+        margin-bottom: 60px;
+        align-items: flex-start;
+      }
+      .wots-content_section::-webkit-scrollbar {
+        display: none;
+      }
+      .wots-content_container {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 auto;
+        width: clamp(293px, 32vw, 400px);
+        padding: 24px;
+        background-color: #f4ffcb;
+        border-radius: 24px;
+        gap: 10px;
+        transition: min-height 0.3s ease;
+      }
+      .wots-content_container svg {
+        width: clamp(41px, 9vw, 54px);
+        height: clamp(41px, 9vw, 54px);
+        background-color: #eef1ff;
+        padding: 10px;
+      }
+      .wots-content_container h2 {
+        color: #3f59d9;
+        font-size: clamp(18px, 2vw, 36px);
+        font-weight: 600;
+        line-height: clamp(28px, 4vw, 44px);
+      }
+      .wots-content_container blockquote {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+      }
+      .wots-content_container blockquote p,
+      .wots-quote {
+        color: #282727;
+        font-size: clamp(14px, 2.5vw, 20px);
+        line-height: clamp(20px, 3vw, 30px);
+        font-weight: 400;
+      }
+      .wots-quote-text {
+        display: inline;
+      }
+      .wots-quote {
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .wots-content_container blockquote footer {
+        color: #282727;
+        font-size: clamp(16px, 2.5vw, 20px);
+        line-height: 24px;
+        font-weight: 600;
+        margin-top: auto;
+      }
+      /* Featured On Section */
+      .wots-featured_container {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        padding-left: 16px;
+      }
+      .wots-featured_container .wots-featured_logos {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        justify-content: flex-start;
+        padding: 10px;
+      }
+      .wots-featured_logos img {
+        width: clamp(75px, 13vw, 124px);
+        height: clamp(33px, 8vw, 43px);
+      }
+      .wots-featured_container h2 {
+        color: #282727;
+        font-size: clamp(18px, 2.5vw, 36px);
+        line-height: 28px;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      /* wots read more and see less */
+      .wots-read-toggle {
+        color: #3f59d9;
+        font-size: clamp(14px, 2.5vw, 20px);
+        line-height: clamp(20px, 3vw, 30px);
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: underline;
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: inherit;
+        font-family: inherit;
+        display: inline;
+      }
+      @media (width > 550px) {
+        .wots-featured_container .wots-featured_logos {
+          margin-left: auto;
+        }
+      }
+      @media (width > 767px) {
+        /* wots heading */
+        .wots-heading br {
+          display: none;
+        }
+      }
+      @media (width > 1024px) {
+        /* content section */
+        .wots-content_section {
+          gap: 40px;
+          justify-content: center;
+        }
+        .wots-featured_container .wots-featured_logos {
+          gap: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="word-on-the_streets">
+      <header class="wots-heading_container">
+        <img src="social-proof-assets/trophy.png" alt="trophy-photo" />
+        <h2 class="wots-heading">
+          Word on <br />
+          the Streets
+        </h2>
+        <img src="social-proof-assets/medal.png" alt="medal-photo" />
+      </header>
+      <div class="wots-content_section">
+        <article class="wots-content_container">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="30"
+            viewBox="0 0 36 30"
+            fill="none">
+            <path
+              d="M7.008 0H13.728L8.64 13.248V15.36H14.592V29.664H0V15.36L7.008 0ZM28.032 0H34.752L29.664 13.248V15.36H35.616V29.664H21.024V15.36L28.032 0Z"
+              fill="#3F59D9" />
+          </svg>
+          <h2>
+            Will be ordering <br />
+            from ABZ again!
+          </h2>
+          <blockquote>
+            <p>
+              Wasn't sure about ordering pricey gadgets online but ABZ delivered in two days. Item was properly packed
+              and sealed. Will definitely be ordering again in the future.
+            </p>
+            <footer>Sofia M.</footer>
+          </blockquote>
+        </article>
+        <article class="wots-content_container">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="30"
+            viewBox="0 0 36 30"
+            fill="none">
+            <path
+              d="M7.008 0H13.728L8.64 13.248V15.36H14.592V29.664H0V15.36L7.008 0ZM28.032 0H34.752L29.664 13.248V15.36H35.616V29.664H21.024V15.36L28.032 0Z"
+              fill="#3F59D9" />
+          </svg>
+          <h2>
+            ABZ never <br />
+            disappoints.
+          </h2>
+          <blockquote>
+            <p
+              class="wots-quote"
+              data-full="I've ordered from ABZ several times now and they never disappoint. This came sealed, in perfect condition,
+              and arrived faster than I expected. Customer support was also really responsive when I had a question
+              about my order. The controller itself is great, and the buying experience is even better!">
+              <span class="wots-quote-text"></span>
+              <button class="wots-read-toggle" type="button" aria-expanded="false">Read More</button>
+            </p>
+            <footer>Camille A.</footer>
+          </blockquote>
+        </article>
+        <article class="wots-content_container">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="30"
+            viewBox="0 0 36 30"
+            fill="none">
+            <path
+              d="M7.008 0H13.728L8.64 13.248V15.36H14.592V29.664H0V15.36L7.008 0ZM28.032 0H34.752L29.664 13.248V15.36H35.616V29.664H21.024V15.36L28.032 0Z"
+              fill="#3F59D9" />
+          </svg>
+          <h2>
+            Legit and reliable <br />
+            service from ABZ.
+          </h2>
+          <blockquote>
+            <p>
+              My order arrived the next day, which I was not expecting at all. Item was well-packaged and exactly what
+              was listed. ABZ feels super reliable and trustworthy!
+            </p>
+            <footer>James V.</footer>
+          </blockquote>
+        </article>
+      </div>
+      <div class="wots-featured_section">
+        <div class="wots-featured_container">
+          <h2>Featured On</h2>
+          <div class="wots-featured_logos">
+            <img src="social-proof-assets/unbox-ph.png" alt="unbox-ph-logo" />
+            <img src="social-proof-assets/candy.png" alt="candy-logo" />
+            <img src="social-proof-assets/tech-inq.png" alt="tech-inq-logo" />
+            <img src="social-proof-assets/philstar-tech.png" alt="philstar-tech-logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <script>
+      (function () {
+        const TRUNCATE_LENGTH = 160;
+        const EXPANDED_TRUNCATE_LENGTH = 165;
+        const RESIZE_DEBOUNCE_MS = 150;
+        const TRANSITION_MS = 300;
+
+        function setHeight(p, targetHeight) {
+          p.style.maxHeight = targetHeight + "px";
+        }
+
+        function toggleRead(btn) {
+          const p = btn.closest(".wots-quote");
+          const full = p.dataset.full;
+          const textSpan = p.querySelector(".wots-quote-text");
+          const expanded = p.dataset.expanded === "true";
+
+          setHeight(p, p.scrollHeight);
+
+          requestAnimationFrame(() => {
+            textSpan.textContent = expanded ? full.slice(0, EXPANDED_TRUNCATE_LENGTH).trim() + "... " : full + " ";
+            btn.textContent = expanded ? "Read More" : "Read Less";
+            btn.setAttribute("aria-expanded", String(!expanded));
+            p.dataset.expanded = String(!expanded);
+
+            const targetHeight = p.scrollHeight;
+            requestAnimationFrame(() => setHeight(p, targetHeight));
+          });
+
+          setTimeout(() => {
+            p.style.maxHeight = "none";
+            // equalizeCardHeights() removed here — only this card's height should change
+          }, TRANSITION_MS);
+        }
+
+        function initReadMore() {
+          document.querySelectorAll(".wots-quote").forEach((p) => {
+            const full = p.dataset.full;
+            const textSpan = p.querySelector(".wots-quote-text");
+            const btn = p.querySelector(".wots-read-toggle");
+
+            textSpan.textContent = full.slice(0, TRUNCATE_LENGTH).trim() + "... ";
+            p.dataset.expanded = "false";
+            p.style.maxHeight = "none";
+
+            btn.addEventListener("click", () => toggleRead(btn));
+          });
+        }
+
+        function equalizeCardHeights() {
+          const cards = document.querySelectorAll(".wots-content_container");
+          cards.forEach((card) => (card.style.minHeight = "auto"));
+
+          let maxHeight = 0;
+          cards.forEach((card) => {
+            maxHeight = Math.max(maxHeight, card.getBoundingClientRect().height);
+          });
+
+          cards.forEach((card) => (card.style.minHeight = maxHeight + "px"));
+        }
+
+        function init() {
+          initReadMore();
+          equalizeCardHeights();
+        }
+
+        let resizeTimer;
+        window.addEventListener("DOMContentLoaded", init);
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(init, RESIZE_DEBOUNCE_MS);
+        });
+      })();
+    </script> -->
+    <script>
+      (function () {
+        const TRUNCATE_LENGTH = 160;
+        const EXPANDED_TRUNCATE_LENGTH = 165;
+        const RESIZE_DEBOUNCE_MS = 150;
+        const TRANSITION_MS = 300;
+
+        function getTruncatedText(full) {
+          return full.slice(0, EXPANDED_TRUNCATE_LENGTH).trim() + "... ";
+        }
+
+        function measureHeightWithText(p, textSpan, text, currentText) {
+          const original = textSpan.textContent;
+          textSpan.textContent = text;
+          const height = p.scrollHeight;
+          textSpan.textContent = currentText !== undefined ? currentText : original;
+          return height;
+        }
+
+        function toggleRead(btn) {
+          const p = btn.closest(".wots-quote");
+          const full = p.dataset.full;
+          const textSpan = p.querySelector(".wots-quote-text");
+          const expanded = p.dataset.expanded === "true";
+          const truncatedText = getTruncatedText(full);
+
+          // lock current height as the animation's starting point
+          setHeight(p, p.scrollHeight);
+
+          if (expanded) {
+            // COLLAPSING: animate height down first, text still full (clipped by overflow:hidden)
+            const targetHeight = measureHeightWithText(p, textSpan, truncatedText, textSpan.textContent);
+
+            requestAnimationFrame(() => setHeight(p, targetHeight));
+
+            setTimeout(() => {
+              textSpan.textContent = truncatedText;
+              btn.textContent = "Read More";
+              btn.setAttribute("aria-expanded", "false");
+              p.dataset.expanded = "false";
+              p.style.maxHeight = "none";
+            }, TRANSITION_MS);
+          } else {
+            // EXPANDING: swap text immediately, then animate height to fit it
+            requestAnimationFrame(() => {
+              textSpan.textContent = full + " ";
+              btn.textContent = "Read Less";
+              btn.setAttribute("aria-expanded", "true");
+              p.dataset.expanded = "true";
+
+              const targetHeight = p.scrollHeight;
+              requestAnimationFrame(() => setHeight(p, targetHeight));
+            });
+
+            setTimeout(() => {
+              p.style.maxHeight = "none";
+            }, TRANSITION_MS);
+          }
+        }
+
+        function setHeight(p, targetHeight) {
+          p.style.maxHeight = targetHeight + "px";
+        }
+
+        function initReadMore() {
+          document.querySelectorAll(".wots-quote").forEach((p) => {
+            const full = p.dataset.full;
+            const textSpan = p.querySelector(".wots-quote-text");
+            const btn = p.querySelector(".wots-read-toggle");
+
+            textSpan.textContent = full.slice(0, TRUNCATE_LENGTH).trim() + "... ";
+            p.dataset.expanded = "false";
+            p.style.maxHeight = "none";
+
+            btn.addEventListener("click", () => toggleRead(btn));
+          });
+        }
+
+        function equalizeCardHeights() {
+          const cards = document.querySelectorAll(".wots-content_container");
+          cards.forEach((card) => (card.style.minHeight = "auto"));
+
+          let maxHeight = 0;
+          cards.forEach((card) => {
+            maxHeight = Math.max(maxHeight, card.getBoundingClientRect().height);
+          });
+
+          cards.forEach((card) => (card.style.minHeight = maxHeight + "px"));
+        }
+
+        function init() {
+          initReadMore();
+          equalizeCardHeights();
+        }
+
+        let resizeTimer;
+        window.addEventListener("DOMContentLoaded", init);
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(init, RESIZE_DEBOUNCE_MS);
+        });
+      })();
+    </script>
+  </body>
+</html>
