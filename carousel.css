@@ -1,0 +1,323 @@
+/* ==========================================================================
+   Product Review Carousel — mobile-first
+   Drop this file in: app/design/frontend/<Vendor>/<theme>/web/css/review-carousel.css
+
+   Base rules below = mobile (single column, photo + only the active review).
+   The @media (min-width: 769px) block at the bottom layers on the desktop
+   two-column layout (photo left / full review list right).
+   ========================================================================== */
+
+.prc {
+  --prc-bg-card: #fbf6d8;
+  --prc-bg-white: #ffffff;
+  --prc-text-primary: #1a1a1a;
+  --prc-text-secondary: #767676;
+  --prc-accent: #2f5fe0;
+  --prc-accent-hover: #1f4dc4;
+  --prc-star: #ffb400;
+  --prc-radius-lg: 16px;
+  --prc-radius-md: 12px;
+  --prc-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --prc-gap: 20px;
+  --prc-speed: 320ms;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--prc-gap);
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--prc-text-primary);
+  /* deliberately no align-items override here: the default ("stretch")
+     is what makes the photo and review block fill the full width on
+     mobile. Desktop overrides this further down. */
+}
+
+/* ---------- Hero (photo) panel ---------- */
+
+.prc__hero-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.prc__hero {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  /* extra bottom room so the overhanging mini-card has somewhere to sit
+     without being clipped by this element's own box */
+  margin-bottom: 26px;
+}
+
+.prc__hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.prc__hero-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .prc__hero-slide {
+    transition: opacity var(--prc-speed) ease;
+  }
+}
+
+.prc__hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--prc-radius-lg);
+  background: #14110f;
+}
+
+/* Sits on the active slide, anchored so it overhangs past the photo's
+   bottom edge like a sticker — the slide itself has no overflow:hidden,
+   so this is free to spill outside the photo's box. */
+.prc__mini-card {
+  position: absolute;
+  left: 16px;
+  bottom: -26px;
+  width: 130px;
+  background: var(--prc-bg-white);
+  border-radius: var(--prc-radius-md);
+  box-shadow: var(--prc-shadow);
+  padding: 8px;
+  text-align: center;
+}
+
+.prc__mini-thumb {
+  width: 100%;
+  height: 70px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.prc__mini-name {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Straddles the photo's edge: centered exactly on the boundary line so
+   half the circle sits on the photo and half sits outside it. */
+.prc__nav-btn {
+  position: absolute;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(20, 20, 20, 0.35);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--prc-text-primary);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prc__nav-btn:hover {
+  background: #fff;
+}
+
+.prc__nav-btn:focus-visible {
+  outline: 2px solid var(--prc-accent);
+  outline-offset: 2px;
+}
+
+.prc__nav-btn--prev {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.prc__nav-btn--next {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+/* Lives *below* the photo, on the page background — not overlaid on
+   top of it. This is a sibling of .prc__hero, not a child. */
+.prc__dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.prc__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.prc__dot.is-active {
+  background: rgba(0, 0, 0, 0.55);
+  width: 8px;
+  height: 8px;
+}
+
+/* ---------- Review list ---------- */
+
+.prc__reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* Mobile: this block renders ABOVE the photo, even though it comes
+     second in the DOM (DOM order = hero, then reviews) — the photo is
+     the more meaningful "first thing" semantically/for SEO, so it leads
+     the markup; this re-orders it visually only. Desktop resets this
+     back to DOM order (see media query) so the photo stays on the left. */
+  order: -1;
+}
+
+.prc__review-card {
+  background: var(--prc-bg-card);
+  border-radius: var(--prc-radius-lg);
+  padding: 16px;
+  text-align: left;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 transparent;
+  /* Mobile: only the active review is visible at all — there's no list
+     to show, just the one item that matches the current photo. */
+  display: none;
+}
+
+.prc__review-card.is-active {
+  display: block;
+  box-shadow: inset 0 0 0 2px var(--prc-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .prc__review-card {
+    transition: box-shadow var(--prc-speed) ease;
+  }
+}
+
+.prc__review-card:focus-visible {
+  outline: 2px solid var(--prc-accent);
+  outline-offset: 2px;
+}
+
+.prc__review-title {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.prc__stars {
+  color: var(--prc-star);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.prc__review-count {
+  color: var(--prc-text-secondary);
+  font-size: 13px;
+  margin-left: 4px;
+}
+
+.prc__quote {
+  margin: 8px 0 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--prc-text-primary);
+}
+
+.prc__reviewer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.prc__reviewer-id {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prc__avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.prc__reviewer-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---------- Shared button ---------- */
+
+.prc__btn {
+  display: inline-block;
+  background: var(--prc-accent);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.prc__btn:hover {
+  background: var(--prc-accent-hover);
+}
+
+.prc__btn:focus-visible {
+  outline: 2px solid var(--prc-text-primary);
+  outline-offset: 2px;
+}
+
+.prc__btn--block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Desktop enhancement — two columns: photo on the left, full review
+   list on the right. Everything above this line is the mobile baseline.
+   ========================================================================== */
+
+@media (min-width: 769px) {
+  .prc {
+    flex-direction: row;
+    align-items: flex-start; /* top-align the two columns; they're
+                                 different heights and shouldn't stretch
+                                 to match each other */
+  }
+
+  .prc__hero-col {
+    flex: 1 1 58%;
+  }
+
+  .prc__reviews {
+    flex: 1 1 42%;
+    order: 0; /* undo the mobile reorder — DOM order already puts the
+                 photo first, so this naturally lands on the right */
+  }
+
+  .prc__review-card {
+    display: block; /* show the full list, not just the active card */
+  }
+}

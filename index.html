@@ -163,6 +163,7 @@
     </style>
   </head>
   <body>
+    <!-- html -->
     <section id="word-on-the_streets">
       <header class="wots-heading_container">
         <img src="social-proof-assets/trophy.png" alt="trophy-photo" />
@@ -219,8 +220,8 @@
             <p
               class="wots-quote"
               data-full="I've ordered from ABZ several times now and they never disappoint. This came sealed, in perfect condition,
-              and arrived faster than I expected. Customer support was also really responsive when I had a question
-              about my order. The controller itself is great, and the buying experience is even better!">
+          and arrived faster than I expected. Customer support was also really responsive when I had a question
+          about my order. The controller itself is great, and the buying experience is even better!">
               <span class="wots-quote-text"></span>
               <button class="wots-read-toggle" type="button" aria-expanded="false">Read More</button>
             </p>
@@ -339,7 +340,7 @@
         });
       })();
     </script> -->
-    <script>
+    <!-- <script>
       (function () {
         const TRUNCATE_LENGTH = 160;
         const EXPANDED_TRUNCATE_LENGTH = 165;
@@ -440,6 +441,43 @@
           clearTimeout(resizeTimer);
           resizeTimer = setTimeout(init, RESIZE_DEBOUNCE_MS);
         });
+      })();
+    </script> -->
+    <script>
+      (() => {
+        const TRUNCATE_LENGTH = 160;
+
+        document.querySelectorAll(".wots-quote").forEach((quote) => {
+          const text = quote.querySelector(".wots-quote-text");
+          const btn = quote.querySelector(".wots-read-toggle");
+          const full = quote.dataset.full;
+          const short = full.slice(0, TRUNCATE_LENGTH).trim() + "...";
+
+          let expanded = false;
+
+          text.textContent = short;
+
+          btn.addEventListener("click", () => {
+            expanded = !expanded;
+
+            text.textContent = expanded ? full : short;
+            btn.textContent = expanded ? "Read Less" : "Read More";
+            btn.setAttribute("aria-expanded", expanded);
+          });
+        });
+
+        function equalizeHeights() {
+          const cards = [...document.querySelectorAll(".wots-content_container")];
+
+          cards.forEach((card) => (card.style.minHeight = "auto"));
+
+          const tallest = Math.max(...cards.map((card) => card.offsetHeight));
+
+          cards.forEach((card) => (card.style.minHeight = `${tallest}px`));
+        }
+
+        window.addEventListener("load", equalizeHeights);
+        window.addEventListener("resize", equalizeHeights);
       })();
     </script>
   </body>

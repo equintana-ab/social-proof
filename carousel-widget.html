@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Review Carousel — Demo</title>
+    <link rel="stylesheet" href="carousel.css" />
+    <style>
+      /* page chrome for the demo only — not part of the component */
+      body {
+        background: #f0ece2;
+        padding: 40px 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="prc" data-prc>
+      <!-- Hero photo panel -->
+      <div class="prc__hero-col">
+        <div class="prc__hero">
+          <div class="prc__hero-slide is-active" data-prc-slide>
+            <img
+              class="prc__hero-img"
+              src="https://via.placeholder.com/480x480/8a6b3f/ffffff?text=Customer+Photo"
+              alt="Customer holding KODAK Charmera box" />
+            <div class="prc__mini-card">
+              <img
+                class="prc__mini-thumb"
+                src="https://via.placeholder.com/200x160/f2c14e/1a1a1a?text=Charmera"
+                alt="KODAK Charmera" />
+              <p class="prc__mini-name">KODAK Charmera</p>
+              <a class="prc__btn prc__btn--block" href="/catalog/product/view/id/101">View Product</a>
+            </div>
+          </div>
+
+          <div class="prc__hero-slide" data-prc-slide>
+            <img
+              class="prc__hero-img"
+              src="https://via.placeholder.com/480x480/1f1f1f/ffffff?text=Customer+Photo"
+              alt="Customer with Samsung Galaxy S26 Ultra" />
+            <div class="prc__mini-card">
+              <img
+                class="prc__mini-thumb"
+                src="https://via.placeholder.com/200x160/1a1a1a/ffffff?text=S26+Ultra"
+                alt="Samsung Galaxy S26 Ultra" />
+              <p class="prc__mini-name">Galaxy S26 Ultra</p>
+              <a class="prc__btn prc__btn--block" href="/catalog/product/view/id/102">View Product</a>
+            </div>
+          </div>
+
+          <div class="prc__hero-slide" data-prc-slide>
+            <img
+              class="prc__hero-img"
+              src="https://via.placeholder.com/480x480/c9c9c9/1a1a1a?text=Customer+Photo"
+              alt="Customer with Apple MacBook Neo" />
+            <div class="prc__mini-card">
+              <img
+                class="prc__mini-thumb"
+                src="https://via.placeholder.com/200x160/e4e4e4/1a1a1a?text=MacBook+Neo"
+                alt="Apple MacBook Neo" />
+              <p class="prc__mini-name">MacBook Neo</p>
+              <a class="prc__btn prc__btn--block" href="/catalog/product/view/id/103">View Product</a>
+            </div>
+          </div>
+
+          <div class="prc__hero-slide" data-prc-slide>
+            <img
+              class="prc__hero-img"
+              src="https://via.placeholder.com/480x480/3f5d6b/ffffff?text=Customer+Photo"
+              alt="Customer with Anker Soundcore Buds Pro 2" />
+            <div class="prc__mini-card">
+              <img
+                class="prc__mini-thumb"
+                src="https://via.placeholder.com/200x160/3f5d6b/ffffff?text=Buds+Pro+2"
+                alt="Anker Soundcore Buds Pro 2" />
+              <p class="prc__mini-name">Soundcore Buds Pro 2</p>
+              <a class="prc__btn prc__btn--block" href="/catalog/product/view/id/104">View Product</a>
+            </div>
+          </div>
+
+          <button class="prc__nav-btn prc__nav-btn--prev" data-prc-prev aria-label="Previous">‹</button>
+          <button class="prc__nav-btn prc__nav-btn--next" data-prc-next aria-label="Next">›</button>
+        </div>
+
+        <!-- Dots live below the photo, not on top of it -->
+        <div class="prc__dots" aria-hidden="true">
+          <span class="prc__dot is-active" data-prc-dot></span>
+          <span class="prc__dot" data-prc-dot></span>
+          <span class="prc__dot" data-prc-dot></span>
+          <span class="prc__dot" data-prc-dot></span>
+        </div>
+      </div>
+
+      <!-- Review list (desktop: full list, mobile: only .is-active shows) -->
+      <div class="prc__reviews">
+        <article class="prc__review-card is-active" data-prc-review tabindex="0" role="button">
+          <h3 class="prc__review-title">KODAK Charmera</h3>
+          <span class="prc__stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <span class="prc__review-count">(4 reviews)</span>
+          <p class="prc__quote">
+            "Super cute at ang mura nung item dahil sa membership price, plus ang bilis pa ng delivery kasi dumating
+            agad nung next day."
+          </p>
+          <div class="prc__reviewer">
+            <div class="prc__reviewer-id">
+              <span class="prc__avatar" style="background: #7c5cff">V</span>
+              <span class="prc__reviewer-name">Venny A.</span>
+            </div>
+            <a class="prc__btn" href="/catalog/product/view/id/101">View Product</a>
+          </div>
+        </article>
+
+        <article class="prc__review-card" data-prc-review tabindex="0" role="button">
+          <h3 class="prc__review-title">Samsung Galaxy S26 Ultra (12GB + 512GB) Black</h3>
+          <span class="prc__stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <span class="prc__review-count">(1 review)</span>
+          <p class="prc__quote">
+            "Super sulit ng preorder freebies and credit card promo nila! Ang bilis din ng delivery. March 17 nko order,
+            nadeliver agad ng March 19. Will definitely order again!"
+          </p>
+          <div class="prc__reviewer">
+            <div class="prc__reviewer-id">
+              <span class="prc__avatar" style="background: #2f5fe0">S</span>
+              <span class="prc__reviewer-name">Sam S.</span>
+            </div>
+            <a class="prc__btn" href="/catalog/product/view/id/102">View Product</a>
+          </div>
+        </article>
+
+        <article class="prc__review-card" data-prc-review tabindex="0" role="button">
+          <h3 class="prc__review-title">Apple MacBook Neo (13-inch, A18 Pro Chip, 2026)</h3>
+          <span class="prc__stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <span class="prc__review-count">(1 review)</span>
+          <p class="prc__quote">
+            "I switched from my old laptop and the A18 Pro chip is a huge jump. Fast checkout, fast delivery, zero
+            issues."
+          </p>
+          <div class="prc__reviewer">
+            <div class="prc__reviewer-id">
+              <span class="prc__avatar" style="background: #1a1a1a">R</span>
+              <span class="prc__reviewer-name">Rico M.</span>
+            </div>
+            <a class="prc__btn" href="/catalog/product/view/id/103">View Product</a>
+          </div>
+        </article>
+
+        <article class="prc__review-card" data-prc-review tabindex="0" role="button">
+          <h3 class="prc__review-title">Anker Soundcore Buds Pro 2</h3>
+          <span class="prc__stars" aria-label="4 out of 5 stars">★★★★☆</span>
+          <span class="prc__review-count">(2 reviews)</span>
+          <p class="prc__quote">"Good sound and the ANC works well for the price. Packaging was solid too."</p>
+          <div class="prc__reviewer">
+            <div class="prc__reviewer-id">
+              <span class="prc__avatar" style="background: #d6993f">J</span>
+              <span class="prc__reviewer-name">Jen L.</span>
+            </div>
+            <a class="prc__btn" href="/catalog/product/view/id/104">View Product</a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <script src="carousel.js"></script>
+  </body>
+</html>
