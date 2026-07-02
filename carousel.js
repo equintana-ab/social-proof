@@ -17,6 +17,20 @@
 
   var AUTOPLAY_INTERVAL_MS = 5000;
 
+  function renderStars(root) {
+    root.querySelectorAll("[data-rating]").forEach(function (el) {
+      var rating = Number(el.dataset.rating);
+      var max = Number(el.dataset.max || 5);
+      var html = "";
+      for (var i = 0; i < max; i++) {
+        html +=
+          '<svg class="prc__star' +
+          (i < rating ? "" : " prc__star--empty") +
+          '" width="14" height="14"><use href="#icon-star"></use></svg>';
+      }
+      el.innerHTML = html;
+    });
+  }
   function initCarousel(root) {
     var slides = Array.prototype.slice.call(root.querySelectorAll("[data-prc-slide]"));
     var dots = Array.prototype.slice.call(root.querySelectorAll("[data-prc-dot]"));
@@ -28,7 +42,7 @@
     if (total === 0) {
       return;
     }
-
+    renderStars(root);
     var activeIndex = findInitialIndex();
     var timerId = null;
 

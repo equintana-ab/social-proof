@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Review Carousel — Demo</title>
     <link rel="stylesheet" href="carousel.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+
     <style>
       /* page chrome for the demo only — not part of the component */
+      * {
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
       body {
-        background: #f0ece2;
         padding: 40px 16px;
       }
     </style>
@@ -21,68 +28,80 @@
           <div class="prc__hero-slide is-active" data-prc-slide>
             <img
               class="prc__hero-img"
-              src="https://via.placeholder.com/480x480/8a6b3f/ffffff?text=Customer+Photo"
+              src="https://abenson-live-product-review.s3.ap-southeast-1.amazonaws.com/200874/tmp/s/c/screenshot_2026-03-23_112257_69c0b39024a78_1774236560.png"
               alt="Customer holding KODAK Charmera box" />
             <div class="prc__mini-card">
               <img
                 class="prc__mini-thumb"
-                src="https://via.placeholder.com/200x160/f2c14e/1a1a1a?text=Charmera"
+                src="https://d1rlzxa98cyc61.cloudfront.net/catalog/product/2/0/200874_2025_3.jpg?auto=webp&format=pjpg&width=640"
                 alt="KODAK Charmera" />
               <p class="prc__mini-name">KODAK Charmera</p>
-              <a class="prc__btn prc__btn--block" href="/catalog/product/view/id/101">View Product</a>
+              <a class="prc__btn" href="/catalog/product/view/id/101">View Product</a>
             </div>
           </div>
 
           <div class="prc__hero-slide" data-prc-slide>
             <img
               class="prc__hero-img"
-              src="https://via.placeholder.com/480x480/1f1f1f/ffffff?text=Customer+Photo"
+              src="https://abenson-live-product-review.s3.ap-southeast-1.amazonaws.com/201422/tmp/s/c/screenshot_2026-03-23_111645_69c0b11eec0a2_1774235934.png"
               alt="Customer with Samsung Galaxy S26 Ultra" />
             <div class="prc__mini-card">
               <img
                 class="prc__mini-thumb"
-                src="https://via.placeholder.com/200x160/1a1a1a/ffffff?text=S26+Ultra"
+                src="https://d1rlzxa98cyc61.cloudfront.net/catalog/product/o/_/o_201422_1.jpg?auto=webp&format=pjpg&width=640"
                 alt="Samsung Galaxy S26 Ultra" />
               <p class="prc__mini-name">Galaxy S26 Ultra</p>
-              <a class="prc__btn prc__btn--block" href="/catalog/product/view/id/102">View Product</a>
+              <a class="prc__btn" href="/catalog/product/view/id/102">View Product</a>
             </div>
           </div>
 
           <div class="prc__hero-slide" data-prc-slide>
             <img
               class="prc__hero-img"
-              src="https://via.placeholder.com/480x480/c9c9c9/1a1a1a?text=Customer+Photo"
+              src="https://i.rtings.com/assets/products/fjfvOgNt/apple-macbook-neo-a18-pro-2026/design-medium.jpg?format=auto"
               alt="Customer with Apple MacBook Neo" />
             <div class="prc__mini-card">
               <img
                 class="prc__mini-thumb"
-                src="https://via.placeholder.com/200x160/e4e4e4/1a1a1a?text=MacBook+Neo"
+                src="https://d1rlzxa98cyc61.cloudfront.net/catalog/product/2/0/201751_2026.jpg?auto=webp&format=pjpg&width=640"
                 alt="Apple MacBook Neo" />
               <p class="prc__mini-name">MacBook Neo</p>
-              <a class="prc__btn prc__btn--block" href="/catalog/product/view/id/103">View Product</a>
+              <a class="prc__btn" href="/catalog/product/view/id/103">View Product</a>
             </div>
           </div>
 
           <div class="prc__hero-slide" data-prc-slide>
             <img
               class="prc__hero-img"
-              src="https://via.placeholder.com/480x480/3f5d6b/ffffff?text=Customer+Photo"
-              alt="Customer with Anker Soundcore Buds Pro 2" />
+              src="https://cdn.xingosoftware.com/audioxpress/images/fetch/dpr_1/https%3A%2F%2Faudioxpress.com%2Fassets%2Fupload%2Fimages%2F1%2F20250516225406_Sony-WH-1000XM6-129031-TWeb.jpg"
+              alt="Customer with Sony WH-1000XM6 Platinum Silver" />
             <div class="prc__mini-card">
               <img
                 class="prc__mini-thumb"
-                src="https://via.placeholder.com/200x160/3f5d6b/ffffff?text=Buds+Pro+2"
-                alt="Anker Soundcore Buds Pro 2" />
-              <p class="prc__mini-name">Soundcore Buds Pro 2</p>
-              <a class="prc__btn prc__btn--block" href="/catalog/product/view/id/104">View Product</a>
+                src="https://d1rlzxa98cyc61.cloudfront.net/catalog/product/1/9/197217_2025.jpg?auto=webp&format=pjpg&width=640"
+                alt="Sony WH-1000XM6 Platinum Silver" />
+              <p class="prc__mini-name">Sony WH-1000XM6</p>
+              <a class="prc__btn" href="/catalog/product/view/id/104">View Product</a>
             </div>
           </div>
 
-          <button class="prc__nav-btn prc__nav-btn--prev" data-prc-prev aria-label="Previous">‹</button>
-          <button class="prc__nav-btn prc__nav-btn--next" data-prc-next aria-label="Next">›</button>
+          <button class="prc__nav-btn prc__nav-btn--prev" data-prc-prev aria-label="Previous">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20" fill="none">
+              <path
+                d="M11.2334 0.389883C10.7027 -0.130163 9.84708 -0.130164 9.31637 0.389882L0.316008 9.20946C-0.106391 9.62337 -0.106391 10.292 0.316008 10.7059L9.31637 19.5255C9.84708 20.0455 10.7027 20.0455 11.2334 19.5255C11.7641 19.0054 11.7641 18.167 11.2334 17.647L3.39194 9.95238L11.2442 2.25781C11.7641 1.74837 11.7641 0.899317 11.2334 0.389883Z"
+                fill="#D8F75C" />
+            </svg>
+          </button>
+          <button class="prc__nav-btn prc__nav-btn--next" data-prc-next aria-label="Next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20" fill="none">
+              <path
+                d="M0.399402 19.5256C0.93011 20.0457 1.78574 20.0457 2.31645 19.5256L11.3168 10.7061C11.7392 10.2922 11.7392 9.62352 11.3168 9.20961L2.31644 0.390035C1.78573 -0.130012 0.930102 -0.130012 0.399395 0.390035C-0.131312 0.910082 -0.131312 1.74853 0.399396 2.26857L8.24087 9.96315L0.388571 17.6577C-0.131306 18.1672 -0.131305 19.0162 0.399402 19.5256Z"
+                fill="#D8F75C" />
+            </svg>
+          </button>
         </div>
 
-        <!-- Dots live below the photo, not on top of it -->
+        <!-- Dots live below the photo -->
         <div class="prc__dots" aria-hidden="true">
           <span class="prc__dot is-active" data-prc-dot></span>
           <span class="prc__dot" data-prc-dot></span>
@@ -92,35 +111,45 @@
       </div>
 
       <!-- Review list (desktop: full list, mobile: only .is-active shows) -->
+      <svg style="display: none">
+        <symbol id="icon-star" viewBox="0 0 22 21">
+          <path
+            d="M11 17.5869L16.3348 20.8096C17.3118 21.4002 18.5073 20.5271 18.2502 19.4229L16.8362 13.3627L21.554 9.27973C22.4153 8.53504 21.9525 7.1227 20.8212 7.03282L14.6123 6.5064L12.1827 0.779998C11.7456 -0.259999 10.2544 -0.259999 9.81734 0.779998L7.38773 6.49356L1.17875 7.01998C0.047509 7.10986 -0.415273 8.5222 0.446015 9.26689L5.16381 13.3498L3.74976 19.4101C3.49266 20.5143 4.68818 21.3874 5.66516 20.7967L11 17.5869Z" />
+        </symbol>
+      </svg>
       <div class="prc__reviews">
         <article class="prc__review-card is-active" data-prc-review tabindex="0" role="button">
           <h3 class="prc__review-title">KODAK Charmera</h3>
-          <span class="prc__stars" aria-label="5 out of 5 stars">★★★★★</span>
-          <span class="prc__review-count">(4 reviews)</span>
+          <div class="prc__rating">
+            <span class="prc__stars" data-rating="4" data-max="5" aria-label="4 out of 5 stars"></span>
+            <span class="prc__review-count">(4 reviews)</span>
+          </div>
           <p class="prc__quote">
             "Super cute at ang mura nung item dahil sa membership price, plus ang bilis pa ng delivery kasi dumating
             agad nung next day."
           </p>
           <div class="prc__reviewer">
             <div class="prc__reviewer-id">
-              <span class="prc__avatar" style="background: #7c5cff">V</span>
+              <img class="prc__avatar" src="dp-violet-eyes.png" alt="profile-photo" />
               <span class="prc__reviewer-name">Venny A.</span>
             </div>
-            <a class="prc__btn" href="/catalog/product/view/id/101">View Product</a>
+            <a class="prc__btn prc__btn--secondary" href="/catalog/product/view/id/101">View Product</a>
           </div>
         </article>
 
         <article class="prc__review-card" data-prc-review tabindex="0" role="button">
           <h3 class="prc__review-title">Samsung Galaxy S26 Ultra (12GB + 512GB) Black</h3>
-          <span class="prc__stars" aria-label="5 out of 5 stars">★★★★★</span>
-          <span class="prc__review-count">(1 review)</span>
+          <div class="prc__rating">
+            <span class="prc__stars" data-rating="5" data-max="5" aria-label="5 out of 5 stars"></span>
+            <span class="prc__review-count">(1 review)</span>
+          </div>
           <p class="prc__quote">
             "Super sulit ng preorder freebies and credit card promo nila! Ang bilis din ng delivery. March 17 nko order,
             nadeliver agad ng March 19. Will definitely order again!"
           </p>
           <div class="prc__reviewer">
             <div class="prc__reviewer-id">
-              <span class="prc__avatar" style="background: #2f5fe0">S</span>
+              <img class="prc__avatar" src="dp-blue-eyes.png" alt="profile-photo" />
               <span class="prc__reviewer-name">Sam S.</span>
             </div>
             <a class="prc__btn" href="/catalog/product/view/id/102">View Product</a>
@@ -129,37 +158,44 @@
 
         <article class="prc__review-card" data-prc-review tabindex="0" role="button">
           <h3 class="prc__review-title">Apple MacBook Neo (13-inch, A18 Pro Chip, 2026)</h3>
-          <span class="prc__stars" aria-label="5 out of 5 stars">★★★★★</span>
-          <span class="prc__review-count">(1 review)</span>
+          <div class="prc__rating">
+            <span class="prc__stars" data-rating="5" data-max="5" aria-label="5 out of 5 stars"></span>
+            <span class="prc__review-count">(1 review)</span>
+          </div>
           <p class="prc__quote">
-            "I switched from my old laptop and the A18 Pro chip is a huge jump. Fast checkout, fast delivery, zero
-            issues."
+            "I switched from my old laptop and the A18 Pro Chip is super fast! Multitasking between classes and editing
+            with a dozen tabs open, it never lags. The 13-inch size is great to carry."
           </p>
           <div class="prc__reviewer">
             <div class="prc__reviewer-id">
-              <span class="prc__avatar" style="background: #1a1a1a">R</span>
-              <span class="prc__reviewer-name">Rico M.</span>
+              <img class="prc__avatar" src="dp-violet-eyes.png" alt="profile-photo" />
+              <span class="prc__reviewer-name">Mac B.</span>
             </div>
             <a class="prc__btn" href="/catalog/product/view/id/103">View Product</a>
           </div>
         </article>
 
         <article class="prc__review-card" data-prc-review tabindex="0" role="button">
-          <h3 class="prc__review-title">Anker Soundcore Buds Pro 2</h3>
-          <span class="prc__stars" aria-label="4 out of 5 stars">★★★★☆</span>
-          <span class="prc__review-count">(2 reviews)</span>
-          <p class="prc__quote">"Good sound and the ANC works well for the price. Packaging was solid too."</p>
+          <h3 class="prc__review-title">Sony WH-1000XM6 Platinum Silver</h3>
+          <div class="prc__rating">
+            <span class="prc__stars" data-rating="4" data-max="5" aria-label="4 out of 5 stars"></span>
+            <span class="prc__review-count">(1 review)</span>
+          </div>
+          <p class="prc__quote">
+            "The noise cancellation on these is on another level - I put them on and my entire environment just
+            disappears. Sound quality is rich without being overdone. Best headphones I've owned by a long shot."
+          </p>
+
           <div class="prc__reviewer">
             <div class="prc__reviewer-id">
-              <span class="prc__avatar" style="background: #d6993f">J</span>
-              <span class="prc__reviewer-name">Jen L.</span>
+              <img class="prc__avatar" src="dp-blue-eyes.png" alt="profile-photo" />
+              <span class="prc__reviewer-name">Son Y.</span>
             </div>
             <a class="prc__btn" href="/catalog/product/view/id/104">View Product</a>
           </div>
         </article>
       </div>
     </div>
-
     <script src="carousel.js"></script>
   </body>
 </html>
