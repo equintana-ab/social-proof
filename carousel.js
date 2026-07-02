@@ -1,7 +1,5 @@
 /* ==========================================================================
    Product Review Carousel — behavior
-   Drop this file in: app/design/frontend/<Vendor>/<theme>/web/js/review-carousel.js
-
    Behavior spec:
    - Auto-advances every AUTOPLAY_INTERVAL_MS.
    - Desktop: prev/next buttons AND clicking a review card change the slide.
@@ -26,7 +24,7 @@
         html +=
           '<svg class="prc__star' +
           (i < rating ? "" : " prc__star--empty") +
-          '" width="14" height="14"><use href="#icon-star"></use></svg>';
+          '" width="clamp(16px, 2.5vw, 21px)" height="clamp(15px, 2.5vw, 21px)"><use href="#icon-star"></use></svg>';
       }
       el.innerHTML = html;
     });
